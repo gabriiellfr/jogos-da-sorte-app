@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import { store } from './store';
 
-import ThemeProvider from './providers/ThemeProvider';
+import { RouterProvider, ThemeProvider } from './providers';
 
 import GlobalStyle from './styles/GlobalStyle';
 
@@ -12,6 +12,7 @@ const App = () => {
         <Provider store={store}>
             <ThemeProvider>
                 <GlobalStyle />
+                <RouterProvider />
             </ThemeProvider>
         </Provider>
     );
