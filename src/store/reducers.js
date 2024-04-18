@@ -1,9 +1,9 @@
-// src/store/reducers.js
 import { combineReducers } from 'redux';
 
-import { themeSlice } from './slices';
+import { authSlice, themeSlice } from './slices';
 
 const rootReducer = combineReducers({
+    auth: authSlice.reducer,
     theme: themeSlice.reducer,
 });
 

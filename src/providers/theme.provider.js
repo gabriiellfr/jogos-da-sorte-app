@@ -1,4 +1,3 @@
-// ThemeProvider.js
 import React, { createContext, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';

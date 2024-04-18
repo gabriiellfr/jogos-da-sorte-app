@@ -1,1 +1,2 @@
-export * from './themeSlices';
+export * from './theme.slice';
+export * from './auth.slice';

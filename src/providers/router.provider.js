@@ -7,6 +7,9 @@ import {
 import { AppLayout, AuthLayout } from '../layouts';
 
 import { LoginPage, RegisterPage } from '../pages/auth';
+import { HomePage } from '../pages/app';
+
+import PocketBaseProvider from './pocketBase.provider';
 
 const router = createBrowserRouter([
     {
@@ -24,17 +27,24 @@ const router = createBrowserRouter([
     },
     {
         element: <AppLayout />,
-        children: [],
+        children: [
+            {
+                element: <HomePage />,
+                path: '/',
+            },
+        ],
     },
-    { path: '*', element: <Navigate to="/login" replace /> },
+    { path: '*', element: <Navigate to="/" replace /> },
 ]);
 
 const RouterProvider = () => {
     return (
-        <RouterProviderRRD
-            router={router}
-            fallbackElement={<p>Initial Load...</p>}
-        />
+        <PocketBaseProvider>
+            <RouterProviderRRD
+                router={router}
+                fallbackElement={<p>Initial Load...</p>}
+            />
+        </PocketBaseProvider>
     );
 };
 
